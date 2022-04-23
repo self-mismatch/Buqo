@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "buqo-c95d0": {
+      "hosting": {
+        "Buqo": [
+          "buqo-c95d0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "buqo-c95d0"
+  }
+}

@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "displayBlock": true
         },
         "@schematics/angular:application": {
           "strict": true
@@ -28,9 +29,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@taiga-ui/icons/src",
+                "output": "assets/taiga-ui/icons"
+              }
             ],
             "styles": [
+              "node_modules/@taiga-ui/core/styles/taiga-ui-global.less",
+              "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
               "src/styles.scss"
             ],
             "scripts": []
@@ -103,9 +111,31 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Buqo:build:production",
+            "firebaseProject": "buqo-c95d0",
+            "firebaseHostingSite": "buqo-c95d0"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/app/**/*.ts",
+              "src/app/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "Buqo"
+  "defaultProject": "Buqo",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
