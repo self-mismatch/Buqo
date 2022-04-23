@@ -8,8 +8,16 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "lint-styles": "stylelint src/**/*.scss",
+    "stylelint": "stylelint src/**/*.scss",
     "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint"
+    ],
+    "*.scss": [
+      "npm run stylelint"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -59,6 +67,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lint-staged": "^12.4.0",
     "prettier": "^2.6.2",
     "stylelint": "^14.7.1",
     "stylelint-config-prettier-scss": "^0.0.1",
