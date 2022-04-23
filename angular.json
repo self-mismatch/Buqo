@@ -120,9 +120,21 @@
             "firebaseProject": "buqo-c95d0",
             "firebaseHostingSite": "buqo-c95d0"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/app/**/*.ts",
+              "src/app/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "Buqo"
+  "defaultProject": "Buqo",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
