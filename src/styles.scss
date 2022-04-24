@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &--full-height {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+}
+
