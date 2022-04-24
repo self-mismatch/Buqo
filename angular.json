@@ -12,6 +12,11 @@
         },
         "@schematics/angular:application": {
           "strict": true
+        },
+        "@schematics/angular": {
+          "component": {
+            "changeDetection": "OnPush"
+          }
         }
       },
       "root": "",
@@ -37,6 +42,7 @@
               }
             ],
             "styles": [
+              "node_modules/modern-normalize/modern-normalize.css",
               "node_modules/@taiga-ui/core/styles/taiga-ui-global.less",
               "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
               "src/styles.scss"

@@ -7,16 +7,16 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint",
+    "eslint": "eslint src/app/**/*.ts",
     "stylelint": "stylelint src/**/*.scss",
     "postinstall": "husky install"
   },
   "lint-staged": {
     "*.ts": [
-      "npm run lint"
+      "npx eslint"
     ],
     "*.scss": [
-      "npm run stylelint"
+      "npx stylelint"
     ]
   },
   "private": true,
@@ -36,6 +36,7 @@
     "@taiga-ui/kit": "^2.42.0",
     "@tinkoff/ng-dompurify": "3.0.0",
     "dompurify": "2.2.9",
+    "modern-normalize": "^1.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
