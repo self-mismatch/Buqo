@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 
 @Component({
@@ -25,6 +27,8 @@ export class FormComponent {
 
   isLoading = false;
 
+  constructor(private auth: AngularFireAuth, private router: Router) {}
+
   submit(): void {
     this.form.markAllAsTouched();
 
@@ -33,13 +37,11 @@ export class FormComponent {
     }
 
     this.isLoading = true;
+    const { email, password } = this.form.getRawValue();
 
-    // TODO: Need to create home page and activate redirect after login
-    // const { email, password } = this.form.getRawValue();
-    //
-    // this.auth.signInWithEmailAndPassword(email, password).then(() => {
-    //   this.isLoading = false;
-    //   // this.router.navigateByUrl('/home');
-    // });
+    this.auth.signInWithEmailAndPassword(email, password).then(() => {
+      this.isLoading = false;
+      this.router.navigateByUrl('/home');
+    });
   }
 }

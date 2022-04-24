@@ -16,10 +16,11 @@ import { NgDompurifySanitizer } from '@tinkoff/ng-dompurify';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
+import { HomeComponent } from './modules/home/home.component';
 import { LoginModule } from './modules/login/login.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
