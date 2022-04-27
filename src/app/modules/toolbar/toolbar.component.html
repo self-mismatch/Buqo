@@ -4,6 +4,7 @@
   class="menu"
   tuiDropdownAlign="left"
   [content]="dropdown"
+  [(open)]="open"
 >
   <button
     tuiIconButton
@@ -22,7 +23,10 @@
     <button
       *ngFor="let item of items"
       tuiOption
+      class="menu__button"
       [routerLink]="item.routerLink"
+      [routerLinkActive]="'menu__button--active'"
+      (click)="menuItemClick()"
     >
       {{ item.name }}
     </button>

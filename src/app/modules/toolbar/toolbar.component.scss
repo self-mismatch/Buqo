@@ -14,3 +14,11 @@
 .menu {
   margin-left: -44px;
 }
+
+.menu__button {
+  &--active {
+    color: var(--tui-text-01-night);
+    background-color: var(--tui-primary);
+    pointer-events: none;
+  }
+}

@@ -9,8 +9,18 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 export class ToolbarComponent {
   readonly items = [
     {
+      name: 'Home',
+      routerLink: '/home',
+    },
+    {
       name: 'Profile',
       routerLink: '/profile',
     },
   ];
+
+  open = false;
+
+  menuItemClick(): void {
+    this.open = false;
+  }
 }
