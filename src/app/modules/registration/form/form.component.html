@@ -1,0 +1,51 @@
+<form
+  [formGroup]="form"
+  (ngSubmit)="submit()"
+>
+  <h2 class="tui-form__header">Registration</h2>
+
+  <div class="tui-form__row">
+    <tui-input formControlName="name">
+      Name
+      <span class="tui-required"></span>
+    </tui-input>
+    <tui-field-error formControlName="name"></tui-field-error>
+  </div>
+  <div class="tui-form__row">
+    <tui-input formControlName="email">
+      Email
+      <span class="tui-required"></span>
+    </tui-input>
+    <tui-field-error formControlName="email"></tui-field-error>
+  </div>
+  <div class="tui-form__row">
+    <tui-input-password formControlName="password">
+      Password
+      <span class="tui-required"></span>
+    </tui-input-password>
+    <tui-field-error formControlName="password"></tui-field-error>
+  </div>
+
+  <div class="tui-form__buttons">
+    <button
+      tuiButton
+      class="tui-form__button"
+      type="submit"
+      size="l"
+      [disabled]="form.invalid && form.touched"
+      [showLoader]="isLoading"
+    >
+      Submit
+    </button>
+    <button
+      tuiButton
+      class="tui-form__button"
+      type="button"
+      appearance="flat"
+      size="l"
+      routerLink="/login"
+    >
+      Login
+    </button>
+  </div>
+</form>

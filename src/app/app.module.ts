@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 import { HomeComponent } from './modules/home/home.component';
 import { LoginModule } from './modules/login/login.module';
+import { RegistrationModule } from './modules/registration/registration.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -32,6 +33,7 @@ import { LoginModule } from './modules/login/login.module';
     TuiDialogModule,
     TuiNotificationsModule,
     LoginModule,
+    RegistrationModule,
   ],
   providers: [
     {
