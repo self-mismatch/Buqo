@@ -5,13 +5,6 @@
   <h2 class="tui-form__header">Login</h2>
 
   <div class="tui-form__row">
-    <tui-input formControlName="name">
-      Name
-      <span class="tui-required"></span>
-    </tui-input>
-    <tui-field-error formControlName="name"></tui-field-error>
-  </div>
-  <div class="tui-form__row">
     <tui-input formControlName="email">
       Email
       <span class="tui-required"></span>
@@ -36,6 +29,16 @@
       [showLoader]="isLoading"
     >
       Submit
+    </button>
+    <button
+      tuiButton
+      class="tui-form__button"
+      type="button"
+      appearance="flat"
+      size="l"
+      routerLink="/registration"
+    >
+      Registration
     </button>
   </div>
 </form>

@@ -21,7 +21,6 @@ import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 export class FormComponent {
   form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
-    name: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
 
