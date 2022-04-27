@@ -2,8 +2,15 @@
   [formGroup]="form"
   (ngSubmit)="submit()"
 >
-  <h2 class="tui-form__header">Login</h2>
+  <h2 class="tui-form__header">Registration</h2>
 
+  <div class="tui-form__row">
+    <tui-input formControlName="name">
+      Name
+      <span class="tui-required"></span>
+    </tui-input>
+    <tui-field-error formControlName="name"></tui-field-error>
+  </div>
   <div class="tui-form__row">
     <tui-input formControlName="email">
       Email
@@ -36,9 +43,9 @@
       type="button"
       appearance="flat"
       size="l"
-      routerLink="/registration"
+      routerLink="/login"
     >
-      Registration
+      Login
     </button>
   </div>
 </form>

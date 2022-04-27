@@ -5,9 +5,9 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
@@ -18,9 +18,10 @@ import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
     },
   ],
 })
-export class FormComponent {
+export class RegistrationComponent {
   form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
+    name: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
 

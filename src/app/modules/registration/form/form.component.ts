@@ -21,6 +21,7 @@ import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 export class FormComponent {
   form: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
+    name: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
 
@@ -36,11 +37,18 @@ export class FormComponent {
     }
 
     this.isLoading = true;
-    const { email, password } = this.form.getRawValue();
+    const { email, name, password } = this.form.getRawValue();
 
-    this.auth.signInWithEmailAndPassword(email, password).then(() => {
-      this.isLoading = false;
-      this.router.navigateByUrl('/home');
+    this.auth.createUserWithEmailAndPassword(email, password).then(response => {
+      response.user
+        ?.updateProfile({
+          displayName: name,
+        })
+        .then(() => {
+          localStorage.setItem('userName', name);
+          this.isLoading = false;
+          this.router.navigateByUrl('/home');
+        });
     });
   }
 }

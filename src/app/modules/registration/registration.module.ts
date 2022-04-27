@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TuiFieldErrorModule, TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
 import { TuiButtonModule, TuiLinkModule } from '@taiga-ui/core';
+import { TuiFieldErrorModule, TuiInputModule, TuiInputPasswordModule } from '@taiga-ui/kit';
+import { RouterModule } from '@angular/router';
 
-import { FormComponent } from './components/form/form.component';
-import { LoginComponent } from './login.component';
+import { RegistrationComponent } from './registration.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
-  declarations: [LoginComponent, FormComponent],
+  declarations: [RegistrationComponent, FormComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -20,6 +20,6 @@ import { LoginComponent } from './login.component';
     TuiLinkModule,
     RouterModule,
   ],
-  exports: [LoginComponent],
+  exports: [RegistrationComponent],
 })
-export class LoginModule {}
+export class RegistrationModule {}
