@@ -20,6 +20,7 @@ import { HomeComponent } from './modules/home/home.component';
 import { LoginModule } from './modules/login/login.module';
 import { RegistrationModule } from './modules/registration/registration.module';
 import { HomeModule } from './modules/home/home.module';
+import { ToolbarModule } from './modules/toolbar/toolbar.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -35,6 +36,7 @@ import { HomeModule } from './modules/home/home.module';
     TuiNotificationsModule,
     LoginModule,
     RegistrationModule,
+    ToolbarModule,
     HomeModule,
   ],
   providers: [
