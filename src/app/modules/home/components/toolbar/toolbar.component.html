@@ -1,0 +1,30 @@
+<h1 class="logo">Buqo</h1>
+
+<tui-hosted-dropdown
+  class="menu"
+  tuiDropdownAlign="left"
+  [content]="dropdown"
+>
+  <button
+    tuiIconButton
+    type="button"
+    size="m"
+  >
+    <tui-svg
+      class="icon"
+      src="tuiIconMenuLarge"
+    ></tui-svg>
+  </button>
+</tui-hosted-dropdown>
+
+<ng-template #dropdown>
+  <tui-data-list>
+    <button
+      *ngFor="let item of items"
+      tuiOption
+      [routerLink]="item.routerLink"
+    >
+      {{ item.name }}
+    </button>
+  </tui-data-list>
+</ng-template>

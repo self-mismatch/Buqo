@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import { HomeComponent } from './modules/home/home.component';
 import { LoginModule } from './modules/login/login.module';
 import { RegistrationModule } from './modules/registration/registration.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -34,6 +35,7 @@ import { RegistrationModule } from './modules/registration/registration.module';
     TuiNotificationsModule,
     LoginModule,
     RegistrationModule,
+    HomeModule,
   ],
   providers: [
     {
