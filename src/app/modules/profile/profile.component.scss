@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.photo-container {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.photo {
+  max-height: 100%;
+  border-radius: var(--tui-radius-m);
+}

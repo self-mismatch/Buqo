@@ -1,0 +1,62 @@
+<div class="container">
+  <h2 class="tui-text_h3">Profile</h2>
+
+  <div
+    *ngIf="profilePhotoURL"
+    class="photo-container"
+  >
+    <img
+      class="photo"
+      alt="Profile photo"
+      [src]="profilePhotoURL"
+    >
+  </div>
+
+  <form
+    [formGroup]="form"
+    (ngSubmit)="updateProfile()"
+  >
+    <div class="tui-form__row">
+      <tui-input formControlName="name">
+        Name
+      </tui-input>
+      <tui-field-error formControlName="name"></tui-field-error>
+    </div>
+    <div class="tui-form__row">
+      <tui-input-files
+        *ngIf="!form.get('photo')?.value"
+        accept="image/*"
+        formControlName="photo"
+        (reject)="onReject($event)"
+      ></tui-input-files>
+
+      <tui-files class="tui-space_top-1">
+        <tui-file
+          *ngIf="form.get('photo')?.valueChanges | async as file"
+          [file]="file"
+          (removed)="removeFile()"
+        ></tui-file>
+
+        <tui-file
+          *ngIf="rejectedFiles$ | async as file"
+          state="error"
+          [file]="file"
+          (removed)="clearRejected()"
+        ></tui-file>
+      </tui-files>
+    </div>
+
+    <div class="tui-form__buttons">
+      <button
+        tuiButton
+        class="tui-form__button"
+        type="submit"
+        size="l"
+        [disabled]="form.pristine"
+        [showLoader]="isLoading"
+      >
+        Update
+      </button>
+    </div>
+  </form>
+</div>
