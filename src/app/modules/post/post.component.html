@@ -1,0 +1,20 @@
+<button
+  tuiIconButton
+  type="button"
+  appearance="flat"
+  icon="tuiIconArrowLeftLarge"
+  (click)="goBack()"
+></button>
+
+<div
+  *ngIf="post$ | async as post"
+  class="container"
+>
+  <img
+    class="post__image"
+    alt=""
+    [src]="post.photoURL"
+  >
+  <h3>{{ post.title }}</h3>
+  <p>{{ post.description }}</p>
+</div>

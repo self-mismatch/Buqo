@@ -1,0 +1,15 @@
+<tui-island class="post-card">
+  <div class="post-card__image-container">
+    <img
+      class="post-card__image"
+      alt=""
+      [src]="post.photoURL"
+    >
+  </div>
+  <h3 class="tui-island__title">
+    {{ post.title }}
+  </h3>
+  <p class="tui-island__paragraph">
+    {{ post.description | truncate }}
+  </p>
+</tui-island>

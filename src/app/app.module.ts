@@ -22,6 +22,7 @@ import { RegistrationModule } from './modules/registration/registration.module';
 import { HomeModule } from './modules/home/home.module';
 import { ToolbarModule } from './modules/toolbar/toolbar.module';
 import { ProfileModule } from './modules/profile/profile.module';
+import { PostModule } from './modules/post/post.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -40,6 +41,7 @@ import { ProfileModule } from './modules/profile/profile.module';
     ToolbarModule,
     HomeModule,
     ProfileModule,
+    PostModule,
   ],
   providers: [
     {
@@ -50,6 +52,7 @@ import { ProfileModule } from './modules/profile/profile.module';
       provide: TUI_SANITIZER,
       useClass: NgDompurifySanitizer,
     },
+    ...environment.providers,
   ],
   bootstrap: [AppComponent],
 })
