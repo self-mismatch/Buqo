@@ -1,3 +1,13 @@
 :host {
   display: block;
 }
+
+.post-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.post-card {
+  width: 100%;
+}
