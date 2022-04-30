@@ -2,6 +2,9 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { PostsService } from '../app/core/services/posts/posts.service';
+import { PostsMockService } from '../mocks/services/posts/posts.mock.service';
+
 export const environment = {
   firebase: {
     projectId: 'buqo-c95d0',
@@ -13,7 +16,13 @@ export const environment = {
     messagingSenderId: '934896127530',
     measurementId: 'G-LT3T44KY5J',
   },
-  production: false
+  production: false,
+  providers: [
+    {
+      provide: PostsService,
+      useClass: PostsMockService,
+    },
+  ],
 };
 
 /*
