@@ -4,6 +4,8 @@
 
 import { PostsService } from '../app/core/services/posts/posts.service';
 import { PostsMockService } from '../mocks/services/posts/posts.mock.service';
+import { UsersService } from '../app/core/services/users/users.service';
+import { UsersMockService } from '../mocks/services/users/users.mock.service';
 
 export const environment = {
   firebase: {
@@ -21,6 +23,10 @@ export const environment = {
     {
       provide: PostsService,
       useClass: PostsMockService,
+    },
+    {
+      provide: UsersService,
+      useClass: UsersMockService,
     },
   ],
 };
