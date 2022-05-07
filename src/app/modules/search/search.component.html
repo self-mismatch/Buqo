@@ -1,0 +1,39 @@
+<form
+  *tuiLet="items$ | async as items"
+  class="b-form"
+  [formGroup]="form"
+>
+  <tui-combo-box
+    tuiTextfieldSize="l"
+    class="tui-space_vertical-5"
+    formControlName="name"
+    [valueContent]="content"
+    [stringify]="stringify"
+  >
+    Find people
+    <input
+      tuiTextfield
+      placeholder="Type a name"
+      (input)="onSearchChange(extractValueFromEvent($event))"
+    />
+    <tui-data-list-wrapper
+      *tuiDataList
+      [items]="items | tuiFilterByInputWith : stringify"
+      [itemContent]="content"
+    ></tui-data-list-wrapper>
+  </tui-combo-box>
+</form>
+
+<ng-template
+  #content
+  let-data
+>
+  <div class="template">
+    <tui-avatar
+      size="xs"
+      class="avatar"
+      [avatarUrl]="data.photo || null"
+    ></tui-avatar>
+    <div class="name">{{data.name}}</div>
+  </div>
+</ng-template>

@@ -23,6 +23,8 @@ import { HomeModule } from './modules/home/home.module';
 import { ToolbarModule } from './modules/toolbar/toolbar.module';
 import { ProfileModule } from './modules/profile/profile.module';
 import { PostModule } from './modules/post/post.module';
+import { SearchModule } from './modules/search/search.module';
+import { UserModule } from './modules/user/user.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -42,6 +44,8 @@ import { PostModule } from './modules/post/post.module';
     HomeModule,
     ProfileModule,
     PostModule,
+    SearchModule,
+    UserModule,
   ],
   providers: [
     {

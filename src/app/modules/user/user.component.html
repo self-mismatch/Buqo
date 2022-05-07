@@ -1,0 +1,26 @@
+<button
+  tuiIconButton
+  type="button"
+  appearance="flat"
+  icon="tuiIconArrowLeftLarge"
+  (click)="goBack()"
+></button>
+
+<div
+  *ngIf="user$ | async as user"
+  class="container"
+>
+  <h2 class="tui-text_h3 title">
+    {{ user.name }}
+  </h2>
+
+  <div
+    class="photo-container"
+  >
+    <img
+      class="photo"
+      alt="Profile photo"
+      [src]="user.photo"
+    >
+  </div>
+</div>
