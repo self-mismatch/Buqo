@@ -1,0 +1,7 @@
+:host {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background-color: var(--tui-primary);
+  border-radius: var(--tui-radius-l) var(--tui-radius-l) 0 0;
+}
