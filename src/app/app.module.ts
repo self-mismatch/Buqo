@@ -25,6 +25,8 @@ import { ProfileModule } from './modules/profile/profile.module';
 import { PostModule } from './modules/post/post.module';
 import { SearchModule } from './modules/search/search.module';
 import { UserModule } from './modules/user/user.module';
+import { BottomBarModule } from './modules/bottom-bar/bottom-bar.module';
+import { IconsModule } from './modules/icons/icons.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -38,9 +40,11 @@ import { UserModule } from './modules/user/user.module';
     BrowserAnimationsModule,
     TuiDialogModule,
     TuiNotificationsModule,
+    IconsModule,
     LoginModule,
     RegistrationModule,
     ToolbarModule,
+    BottomBarModule,
     HomeModule,
     ProfileModule,
     PostModule,

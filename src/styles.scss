@@ -43,3 +43,28 @@ body {
   }
 }
 
+.button {
+  background-color: var(--tui-primary);
+  border: none;
+  cursor: pointer;
+
+  &--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    color: var(--tui-base-01);
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &--active {
+    color: var(--tui-accent);
+  }
+}
+

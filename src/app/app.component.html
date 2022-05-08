@@ -1,5 +1,18 @@
 <tui-root>
-  <app-toolbar></app-toolbar>
+  <div
+    class="layout"
+    [ngClass]="{'layout--with-bars': isAuthorized$ | async}"
+  >
+    <app-toolbar
+      *ngIf="isAuthorized$ | async"
+      class="top-bar"
+    ></app-toolbar>
 
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
+
+    <app-bottom-bar
+      *ngIf="isAuthorized$ | async"
+      class="bottom-bar"
+    ></app-bottom-bar>
+  </div>
 </tui-root>

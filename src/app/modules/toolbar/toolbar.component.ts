@@ -6,21 +6,4 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./toolbar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ToolbarComponent {
-  readonly items = [
-    {
-      name: 'Home',
-      routerLink: '/home',
-    },
-    {
-      name: 'Profile',
-      routerLink: '/profile',
-    },
-  ];
-
-  open = false;
-
-  menuItemClick(): void {
-    this.open = false;
-  }
-}
+export class ToolbarComponent {}

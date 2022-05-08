@@ -1,24 +1,13 @@
 :host {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 16px;
+  padding: 8px;
   background-color: var(--tui-primary);
 }
 
 .logo {
-  margin: 0 auto;
-  color: var(--tui-text-01-night);
-}
-
-.menu {
-  margin-left: -44px;
-}
-
-.menu__button {
-  &--active {
-    color: var(--tui-text-01-night);
-    background-color: var(--tui-primary);
-    pointer-events: none;
-  }
+  margin: 0;
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--tui-base-01);
 }
